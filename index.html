@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon.png" href="./assets/imgs/to-do-removebg-preview.png">
+    <script src="./assets/js/script.js"></script>
+    <title>To-Do-App</title>
+</head>
+<body>
+    <section class="to-do-list-wrapper">
+        <div class="to-do">
+            <div class="to-do-heading">
+                <h1>To Do App</h1>
+                <img src="./assets/imgs/to-do-removebg-preview.png" alt="">
+            </div><!-- /.to-do-heading -->
+            <div class="row">
+                <input tabindex="1" type="text" id="to-do" name="texrt" placeholder="Add your Task  here....">
+                <button onclick="addTask()" class="add-btn">Add </button>                
+            </div>
+            <input type="text" id="searchInput" placeholder="Search tasks">
+            <ul class="list-container">
+                <!-- <li class="checked">Lorem.</li>
+                <li>Lorem.</li>
+                <li>Lorem.</li>
+                <li>Lorem.</li> -->
+            </ul>       
+        </div><!-- /.to-do -->
+
+    </section>
+
+    <script>
+            const inputBox = document.querySelector('#to-do');
+            const listContainer = document.querySelector('.list-container');
+            function addTask(){
+            if(inputBox.value === ''){
+            alert('You Must write something---')
+            }else{
+            let li = document.createElement('li');
+            li.innerHTML = inputBox.value;
+            listContainer.appendChild(li);
+            let span = document.createElement('span')
+            span.innerHTML = "\u00d7"
+            li.appendChild(span);
+            }
+            inputBox.value= '';
+            saveData();
+         }
+         listContainer.addEventListener('click', function(e){
+            if(e.target.tagName === "LI"){
+                e.target.classList.toggle("checked");
+                saveData();
+            }else if(e.target.tagName === "SPAN"){
+                e.target.parentElement.remove();
+                saveData();
+            }
+         }, false);
+         function saveData(){
+            localStorage.setItem("data", listContainer.innerHTML);
+         }
+         function showTask(){
+            listContainer.innerHTML = localStorage.getItem("data");
+         }
+         showTask();
+
+
+
+
+
+
+
+
+
+        // Function to filter tasks based on search query
+        function filterTasks() {
+        var query = document.getElementById("searchInput").value.toLowerCase();
+        var tasks = document.querySelectorAll(".list-container li");
+
+        tasks.forEach(function(task) {
+        var taskText = task.textContent.toLowerCase();
+        if (taskText.indexOf(query) !== -1) {
+            task.style.display = "block";
+        } else {
+            task.style.display = "none";
+        }
+         });
+}
+
+// Attach an event listener to the search input
+document.getElementById("searchInput").addEventListener("input", filterTasks);
+
+    </script>
+</body>
+</html> 
