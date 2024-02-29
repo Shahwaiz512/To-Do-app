@@ -47,7 +47,15 @@
     width: 100%;
     position: relative;
 }
-
+.to-do .search{
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    width: 86%;
+    position: relative;
+}
 .add-btn{
     background-color: salmon;
     border-radius: 50px;
@@ -163,6 +171,9 @@ ul li span:hover{
         top: 8px;
         left: 8px;
         color: grey;
+    }
+    .to-do .search{
+        width: 78%;
     }
 }
 @media (max-width:500px) {
