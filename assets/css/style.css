@@ -66,6 +66,18 @@
     border: none;
     cursor: pointer;
 }
+.search-btn{
+    background-color: salmon;
+    border-radius: 50px;
+    padding: 10px 30px;
+    position: absolute;
+    right: 46px;
+    top: 143px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1111;
+}
 .list-container{
     width: 100px;
     list-style-type: none;
