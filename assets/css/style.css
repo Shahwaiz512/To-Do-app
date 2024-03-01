@@ -187,6 +187,14 @@ ul li span:hover{
     .to-do .search{
         width: 78%;
     }
+    .search-btn{
+        background-color: salmon;
+        border-radius: 50px;
+        padding: 10px 25px;
+        position: absolute;
+        right: 29px;
+        top: 135px;
+    }
 }
 @media (max-width:500px) {
     .to-do{
@@ -237,5 +245,16 @@ ul li span:hover{
         top: 8px;
         left: 8px;
         color: grey;
+    }
+    .to-do .search{
+        width: 78%;
+    }
+    .search-btn{
+        background-color: salmon;
+        border-radius: 50px;
+        padding: 10px 23px;
+        position: absolute;
+        right: 29px;
+        top: 134px;
     }
 }
