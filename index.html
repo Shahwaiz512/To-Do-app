@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon.png" href="./assets/imgs/to-do-removebg-preview.png">
-    <meta name="theme-color" content="#9198e5">
+    <meta name="theme-color" content="#3498db">
     <script src="./assets/js/script.js"></script>
     <title>To-Do-App</title>
 </head>
@@ -58,14 +58,14 @@
                 e.target.parentElement.remove();
                 saveData();
             }
-         }, false);
-         function saveData(){
-            localStorage.setItem("data", listContainer.innerHTML);
-         }
-         function showTask(){
-            listContainer.innerHTML = localStorage.getItem("data");
-         }
-         showTask();
+            }, false);
+            function saveData(){
+                localStorage.setItem("data", listContainer.innerHTML);
+            }
+            function showTask(){
+                listContainer.innerHTML = localStorage.getItem("data");
+            }
+            showTask();
 
 
 
